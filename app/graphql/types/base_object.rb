@@ -11,6 +11,9 @@ module Types
         argument :last_name, String, required: false
         argument :country, String, required: false
         argument :mfa, String, required: false
+        
+        # API sorting
+        argument :sort, [Types::Enum::AccountHolderSort], required: false, default_value: []
       end
     end
   end

@@ -12,5 +12,6 @@ class AccountHolder < ApplicationRecord
       .by_last_name(options[:last_name])
       .by_country(options[:country])
       .by_mfa(options[:mfa])
+      .order(options[:sort].to_h)
   end
 end
