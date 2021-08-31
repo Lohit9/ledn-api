@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 accounts_hash = JSON.parse(File.read("db/accounts.json"))
-accounts_hash.each do |acc| 
+large_accounts_hash = JSON.parse(File.read("db/accounts_large.json"))
+(accounts_hash + large_accounts_hash).each do |acc| 
   AccountHolder.create(
     first_name: acc["firstName"],
     last_name: acc["lastName"],
